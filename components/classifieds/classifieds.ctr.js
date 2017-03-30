@@ -22,13 +22,18 @@
 			vm.editing;
 			vm.editing;
 
-			classifiedsFactory.getClassifieds().then(function(response){
+			vm.classifieds = classifiedsFactory.ref;
+			vm.classifieds.$loaded().then(function(classifieds) {
+				vm.categoriesToSend = getCategories(classifieds);
+			});
 
-				vm.classifieds = response.data;
-					console.log(vm.classifieds);
-				vm.categoriesToSend = getCategories(vm.classifieds);
-				console.log(vm.categoriesToSend)
-				});
+			// classifiedsFactory.getClassifieds().then(function(response){
+			//
+			// 	vm.classifieds = response.data;
+			// 		console.log(vm.classifieds);
+			// 	vm.categoriesToSend = getCategories(vm.classifieds);
+			// 	console.log(vm.categoriesToSend)
+			// 	});
 
 				$scope.$on('newClassified', function(event, classified){
 					classified.id = vm.classifieds.length + 1;

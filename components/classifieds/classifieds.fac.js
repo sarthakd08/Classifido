@@ -2,14 +2,12 @@
 	'use strict';
 
 	angular.module('ngClassifieds')
-			.factory('classifiedsFactory', function($http){
+			.factory('classifiedsFactory', function($http, $firebaseArray, $firebaseObject){
 
-				function getClassifieds(){
-					return $http.get('data/classifieds.json');
-				}
+				var ref = firebase.database().ref();
 
 				return{
-					getClassifieds: getClassifieds
+					ref: $firebaseArray(ref)
 				}
 			});
 })();
