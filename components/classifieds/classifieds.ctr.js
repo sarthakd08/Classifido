@@ -30,6 +30,12 @@
 				console.log(vm.categoriesToSend)
 				});
 
+				$scope.$on('newClassified', function(event, classified){
+					classified.id = vm.classifieds.length + 1;
+					vm.classifieds.push(classified);
+					$scope.showToast('classified Saved!');
+				})
+
 				var Contact = {
 					"name": "Sarthak Dua",
 			 		"phone": "9834571234",
@@ -74,7 +80,7 @@
 
 				function saveClassified(classified){
 					if(classified){
-						classified.contact = Contact;
+						vm.classified.contact = Contact;
 						vm.classifieds.push(classified);
 						vm.classified = {};
 						vm.closeSidebar();

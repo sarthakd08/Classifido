@@ -9,6 +9,7 @@ angular
 		var vm = this;
 
 		vm.closeSidenav = closeSidenav;
+		vm.saveClassified = saveClassified;
 
 			$timeout(function() {
 				$mdSidenav('left-sidenav').open();
@@ -29,17 +30,18 @@ angular
 			}
 
 			function saveClassified(classified) {
+				console.log('kwdfwkdfbws')
 				if(classified){
 					var Contact = {
 						"name": "Sarthak Dua",
 						"phone": "9834571234",
 						"email": "sarthakdua1994@gmail.com"
 					}
-
+					classified.contact = Contact;
 					$scope.$emit('newClassified', classified);
-					$scope.sidenavOpen = false;
+					vm.sidenavOpen = false;
 				}
 			}
-			
+
 	});
 })();

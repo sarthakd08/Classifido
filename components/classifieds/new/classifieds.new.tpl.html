@@ -21,12 +21,12 @@
 				<label for="image">Image Link</label>
 				<input type="text" id="image" ng-model="classified.image">
 			</md-input-container><br/>
-			<md-button class="md-primary" ng-click="vm.saveClassified(classified)" ng-if="!editing">Save</md-button>
+			<md-button class="md-primary" ng-click="vm.saveClassified(classified)" ng-if="!editing">Save New</md-button>
 			<md-button class="md-primary" ng-if="editing" ng-click="vm.saveEdit()">Save Edit</md-button>
 			<md-button class="md-warn" ng-click="vm.closeSidenav()">Cancel</md-button>
 
 			<pre>{{classified | json}}</pre>
 		</form>
 	</md-content>
-	
+
 </md-sidenav>
