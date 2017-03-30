@@ -34,7 +34,11 @@
 					classified.id = vm.classifieds.length + 1;
 					vm.classifieds.push(classified);
 					$scope.showToast('classified Saved!');
-				})
+				});
+
+				$scope.$on('editSaved', function(event, message){
+					$scope.showToast(message);
+				});
 
 				var Contact = {
 					"name": "Sarthak Dua",
@@ -89,7 +93,7 @@
 				}
 
 				// This redirects 'saveEdit' function of 'edit' module and passes object of id,data as
-				// as routeparams to this edit route. See 'classifieds.edit' route in app.js as well. 
+				// as routeparams to this edit route. See 'classifieds.edit' route in app.js as well.
 				function editClassified(classified){
 					$state.go('classifieds.edit', {
 						id: classified.id,

@@ -9,6 +9,7 @@ angular
 		var vm = this;
 
 		vm.closeSidenav = closeSidenav;
+		vm.saveEdit = saveEdit;
 		vm.classified = $state.params.classified;
 
 		console.log('vm.classified: ', vm.classified);
@@ -31,6 +32,12 @@ angular
 				vm.sidenavOpen = false;
 			}
 
+			function saveEdit(classified){
+				if(classified){
+					$scope.$emit('editSaved', 'Edit Successfuly saved!')
+					vm.sidenavOpen = false;
+				}
+			}
 
 
 	})
