@@ -17,10 +17,13 @@
 				templateUrl : 'components/classifieds/new/classifieds.new.tpl.html',
 				controller : 'newClassifiedsCtrl as vm'
 			})
-      .state('classifieds.editing', {
-				url: '/editing',
+      .state('classifieds.edit', {
+				url: '/edit/:id',
 				templateUrl : 'components/classifieds/edit/classifieds.edit.tpl.html',
-				controller : 'editClassifiedsCtrl as vm'
+				controller : 'editClassifiedsCtrl as vm',
+        params: {
+          classified: null
+        }
 			});
 
 	  $urlRouterProvider.otherwise('/classifieds');

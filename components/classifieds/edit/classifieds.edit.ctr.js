@@ -9,6 +9,9 @@ angular
 		var vm = this;
 
 		vm.closeSidenav = closeSidenav;
+		vm.classified = $state.params.classified;
+
+		console.log('vm.classified: ', vm.classified);
 
 			$timeout(function() {
 				$mdSidenav('left-sidenav').open();

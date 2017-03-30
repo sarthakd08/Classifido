@@ -88,11 +88,13 @@
 					}
 				}
 
+				// This redirects 'saveEdit' function of 'edit' module and passes object of id,data as
+				// as routeparams to this edit route. See 'classifieds.edit' route in app.js as well. 
 				function editClassified(classified){
-					vm.editing = true;
-					vm.openSidebar();
-					vm.classified = classified;
-					console.log('Current Object: ', vm.classified);
+					$state.go('classifieds.edit', {
+						id: classified.id,
+						classified: classified
+					});
 				}
 
 				function deleteClassified(event, classified){
