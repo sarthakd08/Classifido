@@ -116,8 +116,6 @@
 						.targetEvent(event);
 
 					$mdDialog.show(confirm).then(function(){
-						// var index = vm.classifieds.indexOf(classified);
-						// vm.classifieds.splice(index, 1);
 						vm.classifieds.$remove(classified);
 						$scope.showToast('Classified Deleted');
 					}, function(){
